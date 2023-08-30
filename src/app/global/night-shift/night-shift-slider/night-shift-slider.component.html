@@ -1,0 +1,16 @@
+<div class="slider-container" #slider>
+  <div class="slider">
+    <div class="icon">
+      <mat-icon>wb_sunny</mat-icon>
+    </div>
+    <mat-slide-toggle (click)="nightShiftService.toggleDarkMode()"
+                      [checked]="nightShiftService.isDarkMode"
+    ></mat-slide-toggle>
+    <img class="night-shift-toggle icon"
+         [src]="nightShiftService.isDarkMode ? 'assets/icons/dark_mode_white_24dp.svg' : 'assets/icons/dark_mode_black_24dp.svg'"
+    >
+    <mat-slider color="accent" max="80">
+      <input matSliderThumb value="80" [(ngModel)]="nightShiftService.opacity" (valueChange)="emitOpacityChangeEvent()">
+    </mat-slider>
+  </div>
+</div>

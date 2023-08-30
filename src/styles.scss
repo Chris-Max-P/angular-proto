@@ -1,0 +1,287 @@
+@import '@angular/material/theming';
+
+@include mat-core();
+
+@import 'man';
+@include angular-material-theme($theme);
+
+@import 'material-design-icons/iconfont/material-icons.css';
+
+:root {
+
+}
+
+* {
+  /* || MAN typo from MAN Corporate Design */
+  font-family: Arial, sans-serif;
+  //font-size: 20px;
+}
+
+body {
+  /* || MAN-COLORS FROM MAN Corporate Design */
+
+  // MAN brand color
+  --MAN-ANTHRAZIT: #303C49;
+  // not allowed to brighten this color
+  --MAN-RED: #E40045;
+  // always in combination with anthrazit to enhance its impression
+  --MAN-SILVER: #AFAFAF;
+
+  //secondary colors, use only if anthrazit and red are not enough
+  --MAN-YELLOW: #FFCD00;
+  --MAN-GREEN: #91B900;
+  --MAN-BLUE: #4B96D2;
+
+  --SCREEN-WIDTH: 100vw;
+
+
+  // light theme colors
+  --APP-BG-COL: #FFF;
+  --APP-COLOR: #000;
+
+  --FIELD-BG-COL: #f0f1f2;
+  --FIELD-TEXT-COL: #000;
+
+  --INPUT-BG-COL: #ffffff;
+  //--INPUT-TEXT-COL: #000000;
+
+  --DISABLED-BG-COL: #dfdfdf;
+  //--DISABLED-TEXT-COL: #8b8b8b;
+
+  margin: 0;
+  min-height: 100vh;
+
+  background-color: var(--APP-BG-COL);
+  color: var(--APP-COLOR);
+}
+
+
+body.dark-mode {
+  // light theme colors
+  --APP-BG-COL: var(--MAN-ANTHRAZIT);
+  --APP-COLOR: #fff;
+
+  --FIELD-BG-COL: #f0f1f2;
+  --FIELD-TEXT-COL: #000;
+
+  // Define dark theme colors for inputs, fields, and other elements
+  --INPUT-BG-COL: #444;
+  --INPUT-TEXT-COL: #fff;
+  --FIELD-BG-COL: #555;
+  --FIELD-TEXT-COL: #fff;
+  --BORDER-COLOR: #666;
+
+  --DISABLED-BG-COL: #3b3b3b;
+  //--DISABLED-TEXT-COL: #8b8b8b;
+
+
+  mat-select .mat-mdc-select-value,
+  mat-select .mat-mdc-select-trigger {
+    color: var(--APP-COLOR) !important; // Assuming --APP-COLOR is your desired text color
+  }
+  .mat-select-panel, .mdc-menu-surface  {
+    background-color: var(--MAN-ANTHRAZIT);
+    color: var(--APP-COLOR) ;
+  }
+  .mat-mdc-paginator-outer-container {
+    background-color: var(--INPUT-BG-COL);
+    color: var(--APP-COLOR) ;
+  }
+  .mdc-list-item__primary-text,
+  .mat-mdc-select-arrow,
+  .mat-mdc-select-placeholder,
+  .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon,
+  .mat-mdc-icon-button .mat-mdc-paginator-icon {
+    color: var(--APP-COLOR) ;
+    fill: var(--APP-COLOR) ;
+  }
+
+  .logo {
+    filter: invert(1);
+  }
+
+  .mat-checkbox-frame {
+    border-color: var(--MAN-SILVER); // You can use another variable for color if you like
+  }
+
+  .mat-checkbox-checked .mat-checkbox-background,
+  .mat-checkbox-indeterminate .mat-checkbox-background {
+    background-color: var(--MAN-SILVER);
+  }
+
+  .mat-checkbox-checked .mat-checkbox-checkmark-path {
+    stroke: var(--MAN-ANTHRAZIT);
+  }
+
+  .mat-checkbox-label {
+    color: var(--APP-COLOR);
+  }
+
+  // dark scrollbar
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #565656;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e7e7e7;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+  }
+
+  // loading screen backdrop
+  .loading-screen {
+    background-color: var(--MAN-ANTHRAZIT);
+  }
+  .loading-screen img {
+    filter: invert(1);
+  }
+}
+.cdk-global-scrollblock {
+  overflow: hidden;
+}
+
+// global
+.horizontally-centered {
+  margin-inline: auto;
+}
+
+.confirm-dialog {
+  height: fit-content;
+  max-width: 25vw;
+
+  padding: 20px;
+}
+
+.input-dialog {
+  height: fit-content;
+  max-width: 25vw;
+
+  padding: 20px;
+}
+
+.mat-mdc-dialog-surface {
+  background-color: var(--APP-BG-COL) !important;
+}
+
+.mat-mdc-dialog-content {
+  color: var(--APP-COLOR) !important;
+}
+
+// night-shifter
+.no-dark-backdrop {
+  background: none;
+}
+
+// S2
+mat-select .mat-mdc-select-trigger {
+  height: 100%;
+}
+
+mat-select .mat-mdc-select-value {
+  padding-inline: 1em;
+}
+
+// global
+mat-select {
+  height: 40px;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+/*
+  the following define the global style for displayed elements
+  they should be applicable to any html element
+*/
+.screen-content {
+  margin: 16px;
+}
+
+.field {
+  border: 1px solid #c9cfd7;
+  border-radius: 4px;
+  padding: 4px;
+  margin: 8px;
+
+  background-color: var(--FIELD-BG-COL);
+  color: var(--FIELD-TEXT-COL);
+  border: 1px solid var(--BORDER-COLOR);
+}
+
+.field-label {
+  display: inline-block;
+
+  padding: 5px;
+  width: 165px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+
+  margin-left: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  height: 40px;
+
+  font-size: 16px;
+
+  background-color: var(--INPUT-BG-COL);
+  color: var(--INPUT-TEXT-COL);
+  border: 1px solid var(--BORDER-COLOR);
+}
+
+.flex-field {
+  display: flex;
+  align-items: center;
+}
+
+.global-field-height {
+  height: 52px;
+}
+
+.disabled {
+  border: 1.5px solid #8b8b8b;
+  background-color: var(--DISABLED-BG-COL);
+}
+
+form .required {
+  border: 1.5px solid var(--MAN-RED);
+}
+
+mat-select .mat-mdc-select-value {
+  text-align: end;
+}
+
+.form-margin {
+  margin: 12px 24px;
+}
+
+.field-label {
+  display: inline-block;
+
+  padding: 5px;
+  width: calc(0.15*var(--SCREEN-WIDTH));
+}
+
+.selection-option {
+  display: flex;
+  align-items: center;
+
+  height: 52px;
+}
+
+.dialog-full-size {
+  width: 90vw;
+  height: 97vh;
+}
+
+.mat-calendar-body-selected {
+  background-color: var(--MAN-BLUE);
+}
+

@@ -1,0 +1,35 @@
+.slider-container {
+  min-width: 32vw;
+  padding: 1em;
+
+  background-color: var(--APP-BG-COL);
+  border: 2px solid var(--APP-COLOR);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+}
+.slider > .icon {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+mat-slide-toggle {
+  align-self: center;
+}
+
+mat-icon {
+  width: 33px;
+
+  transform: scale(1.5) translate(0px, 8px);
+}
+
+.night-shift-toggle {
+  transform: scale(1.5);
+}
+
+mat-slider {
+  width: 100%;
+}
