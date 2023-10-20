@@ -6,7 +6,7 @@ export class LoggerService {
   private static log(message: string, logLevel: LogLevel, electronLog: boolean, optionalParams: any): void {
     if (!environment.isConsoleLoggingEnabled) return;
 
-    window.electronAPI.log(message, logLevel);
+    // window.electronAPI.log(message, logLevel);
 
     let logFunction: Function | undefined;
     switch (logLevel) {

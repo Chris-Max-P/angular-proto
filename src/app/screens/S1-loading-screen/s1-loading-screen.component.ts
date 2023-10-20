@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
   templateUrl: 's1-loading-screen.component.html',
   styleUrls: ['s1-loading-screen.component.scss']
 })
-export class S1LoadingScreenComponent implements OnInit {
+export class S1LoadingScreenComponent {
   constructor(private router: Router) {
   }
 
