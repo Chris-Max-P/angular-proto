@@ -1,13 +1,10 @@
 import {Component, Input} from '@angular/core';
 import {TranslateService} from "@ngx-translate/core";
 import {Router} from "@angular/router";
-import {ScreenNamesEnum} from "@app-logic/enums/screen-names.enum";
 import {NightShiftService} from "@global/night-shift/night-shift.service";
-import {DataLoggerService} from "@data-logic/services/data-logger.service";
 import {Location} from "@angular/common";
 import {DialogService} from "@app-logic/services/dialog.service";
 import {ImportService} from "@data-logic/services/import.service";
-import {JournalService} from "@data-logic/services/journal.service";
 
 @Component({
   selector: 'man-header',
@@ -24,9 +21,7 @@ export class HeaderComponent {
               private importService: ImportService,
               private router: Router,
               public nightShiftService: NightShiftService,
-              public dataLoggerService: DataLoggerService,
-              private location: Location,
-              public journalService: JournalService) {
+              private location: Location) {
   }
 
   changeLang() {
@@ -39,21 +34,5 @@ export class HeaderComponent {
 
   goBack() {
     this.location.back()
-  }
-
-  openImportDialog() {
-    this.dialogService.openImportDialog();
-  }
-
-  goToExport() {
-    this.router.navigateByUrl(`/${ScreenNamesEnum.S15}`);
-  }
-
-  confirmLogout() {
-    this.dialogService.openConfirmDialog('logout.confirm-question', '', this.closeApp);
-  }
-
-  closeApp() {
-    window.electronAPI.closeApp()
   }
 }

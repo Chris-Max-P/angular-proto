@@ -9,18 +9,6 @@
   </span>
 
   <div class="action-bar">
-
-    <img *ngIf="showImportExport"
-         [src]="nightShiftService.isDarkMode ? 'assets/icons/file_download_white_24dp.svg' : 'assets/icons/file_download_black_24dp.svg'"
-         class="icon-button" (click)="openImportDialog()">
-
-    <img *ngIf="showImportExport"
-         [src]="nightShiftService.isDarkMode ? 'assets/icons/file_upload_white_24dp.svg' : 'assets/icons/file_upload_black_24dp.svg'"
-         class="icon-button" (click)="goToExport()">
-
-    <div class="tooltip-container" (mousedown)="customTooltip.toggleTooltip($event)">
-      <img [src]="dataLoggerService.isDataLoggerConnected ? 'assets/icons/bolt_green_24dp.svg' : nightShiftService.isDarkMode ? 'assets/icons/bolt_white_24dp.svg' : 'assets/icons/bolt_black_24dp.svg'"
-           class="icon-button" >
       <app-custom-tooltip #customTooltip tooltipText="example text"></app-custom-tooltip>
     </div>
 
@@ -31,10 +19,6 @@
     </div>
 
     <night-shifter></night-shifter>
-
-    <img [src]="nightShiftService.isDarkMode ? 'assets/icons/logout_white_24dp.svg' : 'assets/icons/logout_black_24dp.svg'"
-         class="icon-button" (click)="confirmLogout()">
-  </div>
 
   <img src="assets/images/man-logo.svg" class="logo">
 </aside>

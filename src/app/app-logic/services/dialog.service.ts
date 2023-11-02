@@ -2,7 +2,6 @@ import {MatDialog} from "@angular/material/dialog";
 import {Injectable} from "@angular/core";
 import {ConfirmDialogComponent} from "@global/confirm-dialog/confirm-dialog.component";
 import {UtilityService} from "./utility.service";
-import {ImportDialogComponent} from "@global/import-dialog/import-dialog.component";
 
 @Injectable({providedIn: 'root' })
 export class DialogService {
@@ -52,10 +51,6 @@ export class DialogService {
 
   openConfirmOmitData() {
     this.openConfirmDialog('confirm-dialog.title.omit-data', '', this.closeAll.bind(this));
-  }
-
-  openImportDialog() {
-    this.dialog.open(ImportDialogComponent, {disableClose: true});
   }
 
   closeAll() {
