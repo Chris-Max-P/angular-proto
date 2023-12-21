@@ -8,6 +8,6 @@ import {NightShiftService} from "@global/night-shift/night-shift.service";
 })
 export class AppComponent {
 
-  constructor(public nightShiftService: NightShiftService) {
+  constructor() {
   }
 }

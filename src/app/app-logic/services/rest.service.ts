@@ -12,8 +12,8 @@ export class RestService {
   apiUrl = environment.contextPath + environment.apiUrl;
 
   headers = {
-    'Authorization': 'Basic ' + btoa('y4754:man.te'),
-    'Functional-User': 'chris'
+    'Authorization': 'Basic ' + btoa(''),
+    'Functional-User': ''
   };
 
   constructor(private http: HttpClient) {

@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   styleUrls: ['s1-loading-screen.component.scss']
 })
 export class S1LoadingScreenComponent {
-  constructor(private router: Router) {
+  constructor() {
   }
 
 }
