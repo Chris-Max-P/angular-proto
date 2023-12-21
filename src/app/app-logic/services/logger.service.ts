@@ -3,10 +3,8 @@ import {environment} from "@environments/environment";
 
 @Injectable({providedIn: 'root'})
 export class LoggerService {
-  private static log(message: string, logLevel: LogLevel, electronLog: boolean, optionalParams: any): void {
+  private static log(message: string, logLevel: LogLevel, optionalParams: any): void {
     if (!environment.isConsoleLoggingEnabled) return;
-
-    // window.electronAPI.log(message, logLevel);
 
     let logFunction: Function | undefined;
     switch (logLevel) {
@@ -38,39 +36,39 @@ export class LoggerService {
   }
 
   static debug(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Debug, false, optionalParams);
+    this.log(msg, LogLevel.Debug, optionalParams);
   }
 
   static info(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Info, false, optionalParams);
+    this.log(msg, LogLevel.Info, optionalParams);
   }
 
   static warn(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Warn, false, optionalParams);
+    this.log(msg, LogLevel.Warn, optionalParams);
   }
 
   static trace(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Trace, false, optionalParams);
+    this.log(msg, LogLevel.Trace, optionalParams);
   }
 
   static error(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Error, false,  optionalParams);
+    this.log(msg, LogLevel.Error,  optionalParams);
   }
 
   static fatal(msg: string, optionalParams: any = '') {
-    this.log(msg, LogLevel.Fatal, false,  optionalParams);
+    this.log(msg, LogLevel.Fatal,  optionalParams);
   }
 
   static time(key: string) {
-    this.log(key, LogLevel.Time, false, '');
+    this.log(key, LogLevel.Time, '');
   }
 
   static timeEnd(key: string) {
-    this.log(key, LogLevel.TimeEnd, false, '');
+    this.log(key, LogLevel.TimeEnd, '');
   }
 
   static electronLog(msg: string, logLevel: LogLevel) {
-    this.log(msg, logLevel, true, ''); //TODO hand over opt params
+    this.log(msg, logLevel, '');
   }
 }
 

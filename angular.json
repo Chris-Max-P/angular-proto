@@ -124,8 +124,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "src/man.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           }

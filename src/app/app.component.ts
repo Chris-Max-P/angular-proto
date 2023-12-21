@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {NightShiftService} from "@global/night-shift/night-shift.service";
+import {NightShiftService} from "./global-components/night-shift/night-shift.service";
 
 @Component({
   selector: 'app-root',
