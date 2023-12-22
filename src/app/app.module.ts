@@ -28,7 +28,6 @@ registerLocaleData(localeDe, 'de-DE', localeDeExtra);
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    MatSelectModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

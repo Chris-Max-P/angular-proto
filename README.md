@@ -4,7 +4,10 @@
 - `node.js` > v18.13.0 (and with that `npm`)
 
 ## Installation steps
-
+- open command line and navigate to the project base dir
+- run `npm install`
+- run `npm run start`
+- open browser and navigate to http://localhost:4200
 
 # Architecture
 
@@ -33,4 +36,4 @@ Every module has a directory that contains (if existent):
 - **rest service** for default rest communication logic (see `app-logic/services/rest.service.ts`)
 - **routing** with `Home`-component as default page (see `app-routing.module.ts`)
 - **short paths** for all 4 important architecture paths (see `tsconfig.json` -> `compilerOptions.paths`)
-- **icons** 
+- **material icons** (see https://www.angularjswiki.com/de/angular/angular-material-icons-list-mat-icon-list/)
