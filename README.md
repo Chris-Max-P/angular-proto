@@ -1,3 +1,11 @@
+# Installation
+
+## Prerequisites
+- `node.js` > v18.13.0 (and with that `npm`)
+
+## Installation steps
+
+
 # Architecture
 
 - `app-logic`: contains any app-related logic (functionality, ...)
@@ -5,18 +13,24 @@
 - `global-components`: contains components that are used globally (e.g. in multiple modules)
 - `pages`: contains the pages of the app
 
-## modules
+## Modules
 Every module has a directory that contains (if existent):
 - module-name.module.ts
 - components
+  - component-name
+    - component-name.component.ts
+    - component-name.component.html
+    - component-name.component.scss
+    - component-name.component.spec.ts
 - enums
 - models
 - services
 
 # Added features
-- translation using `ngx-translate`
-- environment variables
-- logger service for default logging logic
-- rest service for default rest communication
-- routing with `Home`-component as default page
-- default paths for all 4 important architecture paths (in `tsconfig.json`)
+- **translation** using `ngx-translate` (see `app.module.ts` and directory `assets/i18n`)
+- **environment variables** (see directory `environments`)
+- **logger** service for default logging logic (see `app-logic/services/logger.service.ts`)
+- **rest service** for default rest communication logic (see `app-logic/services/rest.service.ts`)
+- **routing** with `Home`-component as default page (see `app-routing.module.ts`)
+- **short paths** for all 4 important architecture paths (see `tsconfig.json` -> `compilerOptions.paths`)
+- **icons** 
